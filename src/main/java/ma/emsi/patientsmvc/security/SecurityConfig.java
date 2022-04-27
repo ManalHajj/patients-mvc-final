@@ -75,6 +75,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         //formulaire par defaut
          http.formLogin();
+         //Cross-site request forgery (CSRF)
+
+         http.csrf();
          http.authorizeHttpRequests().antMatchers("/").permitAll();
          //link accesibility
          http.authorizeHttpRequests().antMatchers("/admin/**").hasAuthority("ADMIN");
